@@ -5,8 +5,7 @@ import scala.io.Source
 object ReadFilePrintLines extends App {
 	if (args.length > 0) {
 		// Source.fromFile try and open a file
-		// sourceObject.getLines returns an Iterator[String] which has each line, excluding end of line.
-		// for iterates through each line
+		// sourceObject.getLines returns an Iterator[String] which has each line per iteration, excluding end of line. It can only be iterated through once though.		// for iterates through each line
 		for (line <- Source.fromFile(args(0)).getLines())
 			println(line.length + " " + line)
 	}
