@@ -19,12 +19,19 @@ class Rational(n: Int, d: Int) {
 	// Over riding Java's Object.toString
 	override def toString = numerator + "/" + denominator
 
-	def add(rationalObject: Rational): Rational = {
+	def + (rationalObject: Rational): Rational = {
 		new Rational(
 			// New numerator
 			numerator * rationalObject.denominator +
 			rationalObject.numerator * denominator,
 			// New denominator
+			denominator * rationalObject.denominator
+		)
+	}
+
+	def * (rationalObject: Rational): Rational = {
+		new Rational(
+			numerator * rationalObject.numerator,
 			denominator * rationalObject.denominator
 		)
 	}
@@ -44,13 +51,14 @@ class Rational(n: Int, d: Int) {
 }
 
 object Rational extends App {
-	val oneHalf = new Rational(1)
+	val oneHalf = new Rational(1, 2)
 	println(oneHalf.toString)
 
-	val twoThirds = new Rational(1, 2)
+	val twoThirds = new Rational(2, 3)
 	println(twoThirds.toString)
 
-	println(oneHalf add twoThirds)
+	println(oneHalf + twoThirds)
+	println(oneHalf * twoThirds)
 	// Throws IllegalArgumentException because of the constraint
 	//val rational2 = new Rational(1, 0)
 }
