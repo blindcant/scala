@@ -29,10 +29,55 @@ class Rational(n: Int, d: Int) {
 		)
 	}
 
+	def + (integerObject: Int): Rational = {
+		new Rational(
+			numerator + integerObject * denominator,
+			denominator,
+		)
+	}
+
+	def - (rationalObject: Rational): Rational = {
+		new Rational(
+			// New numerator
+			numerator * rationalObject.denominator -
+				rationalObject.numerator * denominator,
+			// New denominator
+			denominator * rationalObject.denominator
+		)
+	}
+
+	def - (integerObject: Int): Rational = {
+		new Rational(
+			numerator - integerObject * denominator,
+			denominator,
+		)
+	}
+
 	def * (rationalObject: Rational): Rational = {
 		new Rational(
 			numerator * rationalObject.numerator,
 			denominator * rationalObject.denominator
+		)
+	}
+
+	def * (integerObject: Int): Rational = {
+		new Rational(
+			numerator * integerObject,
+			denominator,
+		)
+	}
+
+	def / (rationalObject: Rational): Rational = {
+		new Rational(
+			numerator * rationalObject.denominator,
+			denominator * rationalObject.numerator
+		)
+	}
+
+	def / (integerObject: Int): Rational = {
+		new Rational(
+			numerator,
+			denominator * integerObject
 		)
 	}
 
@@ -51,6 +96,10 @@ class Rational(n: Int, d: Int) {
 }
 
 object Rational extends App {
+	// Needed for implicit conversion to happen automatically.
+	// This needs to be here so it is in scope, otherwise it is an error.
+	implicit def intToRational(i: Int) = new Rational(i)
+
 	val oneHalf = new Rational(1, 2)
 	println(oneHalf.toString)
 
@@ -59,6 +108,8 @@ object Rational extends App {
 
 	println(oneHalf + twoThirds)
 	println(oneHalf * twoThirds)
+	println(2 * oneHalf)
+
 	// Throws IllegalArgumentException because of the constraint
 	//val rational2 = new Rational(1, 0)
 }
