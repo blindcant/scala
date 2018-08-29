@@ -13,3 +13,4 @@ if (7 == 0) ->
 gcd(7, 14 % 7) -> gcd (7, 0)
 if (0 == 0) -> true return a which is 7
 */
+gcd(14, 21)
