@@ -3,7 +3,7 @@
 
 def factorial(n: Int): Int =
   if (n == 0) 1 else n * factorial(n - 1)
-
+factorial(4)
 /*
 factorial(4)
 if (4 == 0) -> false
@@ -18,5 +18,3 @@ if (0 == 0) -> true -> 1
 4 * (3 * (2 * (1 * 1)))
 24
  */
-
-factorial(4)
