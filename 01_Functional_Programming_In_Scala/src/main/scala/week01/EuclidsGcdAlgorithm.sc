@@ -3,6 +3,7 @@ def gcd(a: Int, b: Int): Int =
   if (b == 0) a
   // Tail recursive call to gcd, because the last step in the function is to call a function recursively
   else gcd(b, a % b)
+gcd(14, 21)
 /*
 gcd(14, 21)
 if (21 == 0) -> false
@@ -13,4 +14,3 @@ if (7 == 0) ->
 gcd(7, 14 % 7) -> gcd (7, 0)
 if (0 == 0) -> true return a which is 7
 */
-gcd(14, 21)
