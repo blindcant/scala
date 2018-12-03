@@ -7,3 +7,6 @@ for (x <- 1 to 7) {
 for (x <- 1 to 7) yield {
   s"Day $x"
 }
+
+
+for (day <- res1) print(day + ", ")
