@@ -10,7 +10,8 @@ val result = identifier[String]("Hi")
 println(result)
 println(result.getClass)
 
-val result2 = identifier[Int](8)
+// Using type inference to stop explicit type statement
+val result2 = identifier(8)
 println(result2)
 println(result2.getClass)
 
