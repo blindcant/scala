@@ -11,3 +11,7 @@ println(pi./(2))
 // Infix operator notation
 println(pi + 2)
 println(pi - 2)
+
+// Multiple parameter infix operator notation
+println(1 + 2 + 3)
+println(1.+(2).+(3))
