@@ -140,3 +140,31 @@ def pointsDistance(point1: (Int, Int), point2: (Int, Int)): Double = {
 
 println(pointsDistance((9, 7), (3, 2)))
 println(pointsDistance((-3, 5), (7, -1)))
+
+printInfoMessage("Question 7")
+
+def returnTuple(tuple: (Any, Any)): (Any, Any) = {
+
+	if(tuple._1.isInstanceOf[Int]) {
+		(tuple._1, tuple._2)
+	}
+	else if (tuple._2.isInstanceOf[Int]) {
+		(tuple._2, tuple._1)
+	}
+	else
+		tuple
+}
+
+println(returnTuple(('A', 2)))
+println(returnTuple(('A', 'B')))
+println(returnTuple((1, 'B')))
+
+printInfoMessage("Question 8")
+
+def returnTuple2(tuple: (Any, Any, Any)): (Any, String, Any, String, Any, String) = {
+	(tuple._1, "\"" + tuple._1.toString + "\"", tuple._2, "\"" + tuple._2.toString + "\"", tuple._3, "\"" + tuple._3.toString + "\"")
+}
+
+println(returnTuple2(('A', 2, 'C')))
+println(returnTuple2(('A', false, 3)))
+println(returnTuple2((1, 'B', true)))
